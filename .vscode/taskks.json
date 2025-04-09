@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build DLL",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-shared",                           
+                "-o",                                 
+                "MyLibrary.dll",                     
+                "MyLibrary.cpp",                    
+                "-I", "C:/tensorflow/include",        
+                "-L", "C:/tensorflow/lib",          
+                "-ltensorflow"                     
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Generated task to build a C++ DLL with TensorFlow"
+        }
+    ]
+}

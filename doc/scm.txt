@@ -1,0 +1,16 @@
+https://www.tensorflow.org/install/lang_c?spm=a2ty_o01.29997173.0.0.3f3dc921kZ4Z3g&hl=es-419
+
+echo "# TensorFlowCPP_VStudioCode" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/aperezNWO/TensorFlowCPP_VStudioCode.git
+git push -u origin main
+
+touch .gitignore
+
+include/
+lib/
+tensorflow.dll
+tensorflow.lib
