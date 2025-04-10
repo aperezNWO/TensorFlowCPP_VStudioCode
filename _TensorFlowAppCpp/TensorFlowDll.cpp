@@ -16,7 +16,7 @@ extern "C" __declspec(dllexport) const char* __cdecl GetTensorFlowVersion() {
     const char* tf_version = TF_Version();
     
     // Define the additional string to append
-    const char* suffix = " (C++ Build)";
+    const char* suffix = " (C++)";
     
     // Calculate the total length of the concatenated string (+1 for null terminator)
     size_t total_length = std::strlen(tf_version) + std::strlen(suffix) + 1;
