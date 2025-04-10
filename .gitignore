@@ -1,4 +1,9 @@
-include/
-lib/
-tensorflow.dll
-tensorflow.lib
+_TensorflowAppC/include/
+_TensorflowAppC/lib/
+_TensorflowAppCpp/include/
+_TensorflowAppCpp/lib/
+_TensorflowAppC/tensorflow.dll
+_TensorflowAppC/tensorflow.lib
+_TensorflowAppCpp/tensorflow.dll
+_TensorflowAppCpp/tensorflow.lib
+
