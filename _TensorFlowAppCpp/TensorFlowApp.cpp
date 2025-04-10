@@ -4,21 +4,9 @@ g++ -std=c++11 -Wall -Wextra -I"include" TensorFlowApp.cpp -o TensorFlowApp.exe 
 
 */
 
-/*
-#include <iostream>
-#include <tensorflow/c/c_api.h>
-
-int main() {
-
-  return 0;
-}
-*/
-
 #include <iostream>
 #include <windows.h>
 
-// Define a function pointer type that matches the exported function signature
-//typedef void (*CallTFVersionFunc)();
 // Define a function pointer type that matches the exported function signature
 typedef const char* (__cdecl *CallTFVersionFunc)();
 
@@ -31,8 +19,6 @@ int main() {
         return 1;
     }
 
-    // Get the address of the exported function
-    //CallTFVersionFunc callTFVersion = (CallTFVersionFunc)GetProcAddress(hDLL, "GetTensorFlowVersion");
      // Get the address of the exported function
      CallTFVersionFunc callTFVersion = (CallTFVersionFunc)GetProcAddress(hDLL, "GetTensorFlowVersion");
 
