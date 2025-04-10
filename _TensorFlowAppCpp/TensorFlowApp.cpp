@@ -24,7 +24,7 @@ typedef const char* (__cdecl *CallTFVersionFunc)();
 
 int main() {
     // Load the DLL
-    HINSTANCE hDLL = LoadLibraryA("TensorFlowApp64.dll"); // Replace "your_tensorflow_dll.dll" with the actual name of your DLL
+    HINSTANCE hDLL = LoadLibraryA("TensorFlowApp64_CPP.dll"); // Replace "your_tensorflow_dll.dll" with the actual name of your DLL
 
     if (hDLL == nullptr) {
         std::cerr << "Error loading DLL: " << GetLastError() << std::endl;
