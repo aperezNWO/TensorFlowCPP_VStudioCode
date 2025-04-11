@@ -1,39 +1,35 @@
 /*
 
-g++ -shared -std=c++11 -Wall -Wextra -I"include" TensorFlowDll.cpp -o TensorFlowApp64_CPP.dll -L"lib" -l:tensorflow.lib
+x86_64-w64-mingw32-g++ -shared -static-libgcc -static-libstdc++ -std=c++14 -Wall -Wextra -g -I"include" TensorFlowDll.cpp -o TensorFlowApp64_CPP.dll -L"lib" -l:tensorflow.lib
 
 */ 
-
-#include <string>
-#include <cstring> // For strlen, strcpy, etc.
-#include <cstdlib> // For malloc, free
-#include <tensorflow/c/c_api.h>
+#include <windows.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <tesseract/capi.h> // Tesseract C API header
+#include <tensorflow/c/c_api.h> // TensorFlow C API header
 
-// Function to get the TensorFlow version with an additional string appended
+
+// Function to get the TensorFlow version
 extern "C" __declspec(dllexport) const char* __cdecl GetTensorFlowVersion() {
-    // Get the TensorFlow version
+    return TF_Version();
+}
+
+// Function to allocate memory and return a concatenated string
+extern "C" __declspec(dllexport) const char* __cdecl GetTensorFlowOcrOutput() {
     const char* tf_version = TF_Version();
-    
-    // Define the additional string to append
-    const char* suffix = "";
-    
-    // Calculate the total length of the concatenated string (+1 for null terminator)
+    const char* suffix = " (Custom Build)";
+
     size_t total_length = std::strlen(tf_version) + std::strlen(suffix) + 1;
-    
-    // Allocate memory for the concatenated string
     char* result = static_cast<char*>(std::malloc(total_length));
     if (!result) {
         return nullptr; // Return nullptr if allocation fails
     }
-    
-    // Copy the TensorFlow version into the result buffer
+
     std::strcpy(result, tf_version);
-    
-    // Append the suffix to the result buffer
     std::strcat(result, suffix);
-    
-    // Return the concatenated string
+
     return result;
 }
 

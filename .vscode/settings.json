@@ -48,6 +48,8 @@
         "xmemory": "cpp",
         "xstring": "cpp",
         "xtr1common": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "__TensorFloaAppDLL.C": "cpp",
+        "__TensorFlowAppDLL.C": "cpp"
     }
 }
