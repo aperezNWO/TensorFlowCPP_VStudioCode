@@ -18,9 +18,10 @@ extern "C" __declspec(dllexport) const char* __cdecl GetTensorFlowVersion_CPP() 
 
 extern "C" __declspec(dllexport) const char* __cdecl GetTensorFlowOcrOutput() {
     //
-    std::string result = "OCR OUTPUT";
+    //std::string result = "OCR OUTPUT";
+    const char * result        = "OCR OUTPUT";
     //
-    return result.c_str();
+    return result;
 }
 
 
