@@ -37,4 +37,3 @@ extern "C" __declspec(dllexport) const char* __cdecl GetTensorFlowVersion() {
     return result;
 }
 
-
