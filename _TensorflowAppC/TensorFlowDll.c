@@ -1,26 +1,10 @@
 /*
 
-gcc -I"include" -L"lib" -shared -o TensorFlowApp64.dll TensorFlowDll.c -ltensorflow
+gcc -I"include" -L"lib" -shared -o TensorFlowApp64_C.dll TensorFlowDll.c -ltensorflow
 
 
 */
 
-/**
-#include <stdio.h>
-#include <tensorflow/c/c_api.h>
-
-// Function to return the TensorFlow version as a string
-#ifdef _WIN32
-  #define EXPORT __declspec(dllexport)
-#else
-  #define EXPORT
-#endif
-
-EXPORT const char* GetTensorFlowVersion() {
-    const char* msg = TF_Version();
-    return msg; // Return the TensorFlow version directly
-}
-*/
 
 #include <stdio.h>
 #include <string.h>
@@ -33,9 +17,10 @@ EXPORT const char* GetTensorFlowVersion() {
   #define EXPORT
 #endif
 
-EXPORT const char* GetTensorFlowVersion() {
+
+EXPORT const char* GetTensorFlowVersionInfo() {
     const char* version = TF_Version();
-    const char* prefix = "TensorFlow Version: ";
+    const char* prefix  = "TensorFlow Version: ";
 
     // Allocate enough memory for the combined string
     size_t buffer_size = strlen(prefix) + strlen(version) + 1;
@@ -52,3 +37,7 @@ EXPORT const char* GetTensorFlowVersion() {
     return msg;  // Remember: caller must free() this!
 }
 
+EXPORT const char* GetTensorFlowVersion() {
+  const char* msg = TF_Version();
+  return msg; // Return the TensorFlow version directly
+}

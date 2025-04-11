@@ -2,7 +2,6 @@
 
 gcc -o TensorFlowAppC.exe TensorFlowAppC.c -I"include" -L"lib" -ltensorflow
 
-
 */
 #include <stdio.h>
 #include <windows.h>
