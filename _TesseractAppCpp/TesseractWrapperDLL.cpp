@@ -1,0 +1,64 @@
+/**
+
+hi. ¿Can you please tell me how to Wrap Tesseract directly in C++ under windows x64 operating systen?
+
+// dynamic
+vcpkg install tesseract:x64-mingw-dynamic
+
+g++ -shared -o TensorFlowApp64_CPP.dll TesseractWrapperDLL.cpp   -I"C:/Users/pablo.perez/dev/cpp/Tesseract/_src/vcpkg/installed/x64-mingw-dynamic/include"  -L"C:/Users/pablo.perez/dev/cpp/Tesseract/_src/vcpkg/installed/x64-mingw-dynamic/lib" -ltesseract55 -lleptonica -Wl,--subsystem,windows -m64 
+
+ 
+// dynamic app
+// worked
+
+g++ -o TensorFlowApp64_CPP.exe TesseractWrapperEXE.cpp   -I"C:/Users/pablo.perez/dev/cpp/Tesseract/_src/vcpkg/installed/x64-mingw-dynamic/include"  -L"C:/Users/pablo.perez/dev/cpp/Tesseract/_src/vcpkg/installed/x64-mingw-dynamic/lib" -ltesseract55 -lleptonica 
+
+
+// static
+
+g++ -shared -static -static-libgcc -static-libstdc++ -o TensorFlowApp64_CPP.dll TesseractWrapperDLL.cpp -I"C:/Users/pablo.perez/dev/cpp/Tesseract/_src/vcpkg/installed/x64-mingw-static/include"  -L"C:/Users/pablo.perez/dev/cpp/Tesseract/_src/vcpkg/installed/x64-mingw-static/lib"    -ltesseract55 -lleptonica -lcurl -larchive -ltiff -lwebp -lsharpyuv -lgif -lopenjp2 -lssl -lcrypto -lpng -ljpeg -lz -lbz2 -llzma -llz4 -lzstd -lws2_32 -lbcrypt -lcrypt32 -Wl,--subsystem,windows -m64
+
+
+
+ 
+*/
+
+
+
+#include <tesseract/baseapi.h>
+#include <leptonica/allheaders.h>
+#include <string>
+#include <iostream>
+
+
+extern "C" __declspec(dllexport) const char* __cdecl GetTensorFlowOcrOutput() {
+
+    const char* imagePath = "Input.png";
+    static std::string output;
+
+    tesseract::TessBaseAPI ocr;
+
+    if (ocr.Init("tessdata", "eng")) {
+        output = "Could not initialize tesseract.";
+        return output.c_str();
+    }
+
+    Pix* image = pixRead(imagePath);
+    if (!image) {
+        output = "Could not open image.";
+        return output.c_str();
+    }
+
+    ocr.SetImage(image);
+    char* result = ocr.GetUTF8Text();
+
+    output = result ? result : "No output.";
+    delete[] result;
+    pixDestroy(&image);
+    ocr.End();
+
+    return output.c_str();
+}
+
+
+

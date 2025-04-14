@@ -7,14 +7,16 @@ x86_64-w64-mingw32-g++ -shared -static-libgcc -static-libstdc++ -std=c++14 -Wall
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <tesseract/capi.h> // Tesseract C API header
-#include <tensorflow/c/c_api.h> // TensorFlow C API header
+//#include <tesseract/capi.h> // Tesseract C API header
+//#include <tensorflow/c/c_api.h> // TensorFlow C API header
 
 
 // Function to get the TensorFlow version
+/*
 extern "C" __declspec(dllexport) const char* __cdecl GetTensorFlowVersion_CPP() {
     return TF_Version();
 }
+*/
 
 extern "C" __declspec(dllexport) const char* __cdecl GetTensorFlowOcrOutput() {
     //

@@ -6,4 +6,11 @@ _TensorflowAppC/tensorflow.dll
 _TensorflowAppC/tensorflow.lib
 _TensorflowAppCpp/tensorflow.dll
 _TensorflowAppCpp/tensorflow.lib
+_TesseractAppCpp/vcpkg/
+_TesseractAppCpp/include/
+_TesseractAppCpp/lib/
+_TesseractAppCpp/__dist/
+_TesseractAppCpp/*.lib
+
+
 
