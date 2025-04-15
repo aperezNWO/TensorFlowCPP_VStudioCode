@@ -1,16 +1,14 @@
-_TensorflowAppC/include/
-_TensorflowAppC/lib/
-_TensorflowAppCpp/include/
-_TensorflowAppCpp/lib/
-_TensorflowAppC/tensorflow.dll
-_TensorflowAppC/tensorflow.lib
-_TensorflowAppCpp/tensorflow.dll
-_TensorflowAppCpp/tensorflow.lib
-_TesseractAppCpp/vcpkg/
-_TesseractAppCpp/include/
-_TesseractAppCpp/lib/
-_TesseractAppCpp/__dist/
-_TesseractAppCpp/*.lib
+_install/
+src/__tensorflow/_tensorflow_c/include/
+src/__tensorflow/_tensorflow_c/lib/
+src/__tensorflow/_tensorflow_c/tensorflow.dll
+src/__tensorflow/_tensorflow_c/tensorflow.lib
+src/__tesseract/_tesseract_cpp/include/
+src/__tesseract/_tesseract_cpp/lib/
+src/__tesseract/_tesseract_cpp/tensorflow.dll
+src/__tesseract/_tesseract_cpp/*.lib
+src/__netCore/Pruebas.Cliente/bin/
+
 
 
 
