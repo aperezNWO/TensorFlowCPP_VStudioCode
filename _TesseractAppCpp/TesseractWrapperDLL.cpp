@@ -2,17 +2,6 @@
 
 hi. ¿Can you please tell me how to Wrap Tesseract directly in C++ under windows x64 operating systen?
 
-// dynamic
-vcpkg install tesseract:x64-mingw-dynamic
-
-g++ -shared -o TensorFlowApp64_CPP.dll TesseractWrapperDLL.cpp   -I"C:/Users/pablo.perez/dev/cpp/Tesseract/_src/vcpkg/installed/x64-mingw-dynamic/include"  -L"C:/Users/pablo.perez/dev/cpp/Tesseract/_src/vcpkg/installed/x64-mingw-dynamic/lib" -ltesseract55 -lleptonica -Wl,--subsystem,windows -m64 
-
- 
-// dynamic app
-// worked
-
-g++ -o TensorFlowApp64_CPP.exe TesseractWrapperEXE.cpp   -I"C:/Users/pablo.perez/dev/cpp/Tesseract/_src/vcpkg/installed/x64-mingw-dynamic/include"  -L"C:/Users/pablo.perez/dev/cpp/Tesseract/_src/vcpkg/installed/x64-mingw-dynamic/lib" -ltesseract55 -lleptonica 
-
 
 // static
 

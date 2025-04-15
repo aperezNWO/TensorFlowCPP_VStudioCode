@@ -1,10 +1,5 @@
 /*
-
-
-
-// worked copying files "libwinpthread-1.dll"
-
-g++ -shared -o TensorFlowApp64_CPP.dll TesseractDll.cpp -static-libgcc -static-libstdc++ -Wl,--out-implib=TensorFlowApp64_CPP.a
+// static link sample
 
 // worked
 

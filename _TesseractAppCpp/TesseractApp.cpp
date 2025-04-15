@@ -1,5 +1,7 @@
 /*
 
+TEST DLL
+
 g++ -std=c++11 -Wall -Wextra  TesseractApp.cpp -o TesseractApp.exe -m64
 
 
