@@ -1,6 +1,6 @@
 /*
 
-gcc -I"include" -L"lib" -shared -o TensorFlowApp64_C.dll TensorFlowApp64_C_Dll.c -ltensorflow
+gcc -I"include" -L"lib" -shared -o TensorFlowApp64_C.dll tf_dll_gen.c -ltensorflow
 
 
 */

@@ -1,6 +1,6 @@
 /*
 
-gcc -o TensorFlowAppC.exe test_simple_dll.c -I"include" -L"lib" -ltensorflow
+gcc -o TensorFlowAppC.exe tf_dll_test.c -I"include" -L"lib" -ltensorflow
 
 */
 #include <stdio.h>
