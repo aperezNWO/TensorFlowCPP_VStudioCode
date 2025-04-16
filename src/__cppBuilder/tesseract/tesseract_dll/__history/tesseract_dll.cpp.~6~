@@ -1,0 +1,58 @@
+#include <windows.h>
+#include <iostream>
+#include <conio.h>
+#include <string>
+#pragma hdrstop
+#pragma argsused
+
+// Define function pointer types for the DLL functions
+typedef const char* (__cdecl *GetTensorFlowOcrOutputFunc)();
+
+extern "C" __declspec(dllexport) const char* __cdecl GetTensorFlowOcrOutput() {
+    // Load the DLL
+    HINSTANCE hDll = LoadLibraryA("tesseract.dll");
+    if (!hDll) {
+        DWORD errorCode = GetLastError(); // Capture the error immediately
+        std::cerr << "Failed to load tesseract.dll. Error code: " << errorCode << std::endl;
+
+        // Optional: Format the error message for more detail
+        LPVOID errorMsg;
+        FormatMessageA(
+            FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
+            NULL,
+            errorCode,
+            MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
+            (LPSTR)&errorMsg,
+            0,
+            NULL
+        );
+        std::cerr << "Error message: " << (LPSTR)errorMsg << std::endl;
+        LocalFree(errorMsg);
+
+        return "error";
+    }
+
+    // Get the addresses of the exported functions
+    GetTensorFlowOcrOutputFunc getOcrOutput = (GetTensorFlowOcrOutputFunc)GetProcAddress(hDll, "GetTensorFlowOcrOutput");
+
+    // Check if the functions were found
+    if (!getOcrOutput) {
+        std::cerr << "Failed to get function addresses. Error code: " << GetLastError() << std::endl;
+        FreeLibrary(hDll);
+        return "error";
+    }
+
+    // Test GetTensorFlowOcrOutput (uses hardcoded "Input.png")
+    const char* result2 = getOcrOutput();
+
+
+    // Clean up
+    //FreeLibrary(hDll);
+    return result2;
+}
+
+
+extern "C" int _libmain(unsigned long reason)
+{
+	return 1;
+}
