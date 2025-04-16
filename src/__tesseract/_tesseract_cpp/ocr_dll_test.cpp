@@ -2,7 +2,7 @@
 
 TEST DLL
 
-g++ -std=c++11 -Wall -Wextra  TesseractApp.cpp -o TesseractApp.exe -m64
+g++ -std=c++11 -Wall -Wextra  ocr_dll_test.cpp -o TesseractApp.exe -m64
 
 
 */

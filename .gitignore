@@ -1,4 +1,3 @@
-_install/
 src/__tensorflow/_tensorflow_c/include/
 src/__tensorflow/_tensorflow_c/lib/
 src/__tensorflow/_tensorflow_c/tensorflow.dll
