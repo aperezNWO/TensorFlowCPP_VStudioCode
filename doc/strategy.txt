@@ -79,6 +79,6 @@
     -- [_]  Ask for tensorflow capabilies in C++.
 
 
-
+-- [_]  NAMING CONVENTION FIX.
 
 ///////////////////////////////////////////////
