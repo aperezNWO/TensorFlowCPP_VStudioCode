@@ -2,12 +2,83 @@
 // STRATEGY
 ///////////////////////////////////////////////
 
+-- [_]  TESSERACT  
 
--- [_]  Ask for more Tesseract capabilies in C++.
+        -- [x] installer
 
--- [_]  Ask for tensorflow capabilies in C++.
+            -- [x] VCPKG.
+        
+        -- [X]  g++         DLL standalone wrapper.
 
-    -- [_]  vcpkg alternative.
+                -- [x]  TensorFlowApp64_CPP.DLL
+
+                -- [x]  GetTensorFlowOcrOutput()
+
+                -- [x]  https://tensorflownetcore64.tryasp.net/GetTensorFlowOcrOutput
+ 
+
+        -- [X]  C++ Builder DLL standalone wrapper.
+
+                -- [x]  tesseract.dll (anterior "TensorFlowApp64_CPP.DLL" g++ standalone)
+                  
+                -- [x]  TensorFlowApp64_CPP.DLL (c++ builder) y otros archivos *.a, *.o, etc (verificar si se necesitan)
+
+                -- [x]  GetTensorFlowOcrOutput()
+
+                -- [x]  https://tensorflownetcore64.tryasp.net/GetTensorFlowOcrOutput
+
+        -- [>]  Complete ocr tesseract sample Angular / C++.
+
+                -- [>]  Coregir convención de nombres.
+
+                        -- [_] Corregir instalación visual studio community.
+                       
+                        -- [_] Cambiar "TensorFlowApp64_CPP.DLL" a "TesseractApp64_CPP.DLL".
+
+
+        -- [_]  Ask for more Tesseract capabilies in C++.
+
+
+-- [_] TENSORFLOW 
+
+    -- [_]    installer
+
+            -- [_]  vcpkg alternative (VCPKG NOT WORKING, BAZEL MISSING).
+
+            -- [_]  vcpkg uninstall tensorflow (free disk space).
+
+            -- [_]  download tensorflow for c installer official web page.
+
+    -- [x]  gcc standalone wrapper.
+
+            -- [_] TensorFlowApp64_C.dll
+
+            -- [_] GetTensorFlowVersion()
+
+            -- [_] https://tensorflownetcore64.tryasp.net/GetTensorFlowVersion
+
+
+    -- [_]  g++ standalone wrapper.
+
+            -- [_] TensorFlowApp64_CPP.dll (corregir primero version "TensorFlowApp64_CPP.dll" en tesseract)
+
+            -- [_] GetTensorFlowVersion()
+
+            -- [_] https://tensorflownetcore64.tryasp.net/GetTensorFlowVersion
+
+    -- [_]  c++ builder  standalone wrapper.
+
+            -- [_] tensorflow.dll (anterior TensorFlowApp64_CPP.dll)
+
+            -- [_] TensorFlowApp64_CPP.dll
+
+            -- [_] GetTensorFlowVersion()
+
+            -- [_] https://tensorflownetcore64.tryasp.net/GetTensorFlowVersion
+
+    -- [_]  Ask for tensorflow capabilies in C++.
+
+
 
 
 ///////////////////////////////////////////////
