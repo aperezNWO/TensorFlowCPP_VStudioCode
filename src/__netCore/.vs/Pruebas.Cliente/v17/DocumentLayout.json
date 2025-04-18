@@ -1,12 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\pablo.perez\\dev\\cpp\\TensorFlow\\vstudiocode\\src\\__netCore\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{B3AEA28C-9896-4EEC-8898-4EA41B49BCF4}|Pruebas.Cliente\\Pruebas.Cliente.csproj|c:\\users\\pablo.perez\\dev\\cpp\\tensorflow\\vstudiocode\\src\\__netcore\\pruebas.cliente\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3AEA28C-9896-4EEC-8898-4EA41B49BCF4}|Pruebas.Cliente\\Pruebas.Cliente.csproj|solutionrelative:pruebas.cliente\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 32,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -143,19 +138,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\pablo.perez\\dev\\cpp\\TensorFlow\\vstudiocode\\src\\__netCore\\Pruebas.Cliente\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Pruebas.Cliente\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\pablo.perez\\dev\\cpp\\TensorFlow\\vstudiocode\\src\\__netCore\\Pruebas.Cliente\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Pruebas.Cliente\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T03:56:34.836Z",
-              "EditorCaption": ""
             }
           ]
         },

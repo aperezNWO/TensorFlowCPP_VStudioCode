@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\pablo.perez\dev\cpp\_install\dist\tesseract</_PublishTargetUrl>
-    <History>True|2025-04-18T03:49:22.0768469Z;True|2025-04-17T20:36:07.3110376-05:00;</History>
+    <History>True|2025-04-18T22:58:12.9404888Z;True|2025-04-18T17:57:38.2972021-05:00;True|2025-04-18T17:46:12.5821910-05:00;True|2025-04-17T22:49:22.0768469-05:00;True|2025-04-17T20:36:07.3110376-05:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>

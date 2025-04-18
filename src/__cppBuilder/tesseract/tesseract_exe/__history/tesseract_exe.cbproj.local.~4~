@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/11/18 02:04:58.000.919,=C:\OneDrive\_root\usuarios\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2023/11/18 02:04:58.000.936,=C:\OneDrive\_root\usuarios\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>2023/11/18 02:05:56.000.773,C:\OneDrive\_root\usuarios\Embarcadero\Studio\Projects\File1.cpp=C:\OneDrive\_root\Personal\dev\cppBuilder\13\CppBuilder01\Project3\File1.cpp</Transaction>
+    <Transaction>2023/11/18 02:05:56.000.784,C:\OneDrive\_root\usuarios\Embarcadero\Studio\Projects\Project1.cbproj=C:\OneDrive\_root\Personal\dev\cppBuilder\13\CppBuilder01\Project3\Project3.cbproj</Transaction>
+    <Transaction>2023/11/18 02:05:56.000.743,C:\OneDrive\_root\usuarios\Embarcadero\Studio\Projects\Project1PCH1.h=C:\OneDrive\_root\Personal\dev\cppBuilder\13\CppBuilder01\Project3\Project3PCH1.h</Transaction>
+    <Transaction>2023/11/18 02:06:08.000.737,C:\OneDrive\_root\Personal\dev\cppBuilder\13\CppBuilder01\Project3\File1.cpp=C:\OneDrive\_root\Personal\dev\cppBuilder\13\CppBuilder01\Project3\Main.cpp</Transaction>
+    <Transaction>2023/11/18 02:06:30.000.494,C:\OneDrive\_root\Personal\dev\cppBuilder\13\CppBuilder01\Project3\Project3PCH1.h=C:\OneDrive\_root\Personal\dev\cppBuilder\13\CppBuilder01\Project3\Algorithm.ConsolePCH1.h</Transaction>
+    <Transaction>2023/11/18 02:06:30.000.502,C:\OneDrive\_root\Personal\dev\cppBuilder\13\CppBuilder01\Project3\Project3.cbproj=C:\OneDrive\_root\Personal\dev\cppBuilder\13\CppBuilder01\Project3\Algorithm.Console.cbproj</Transaction>
+    <Transaction>2023/11/20 01:22:14.000.766,=C:\OneDrive\_root\Personal\dev\cppBuilder\13\CppBuilder01\Project3\File1.cpp</Transaction>
+    <Transaction>2023/11/20 01:22:32.000.428,C:\OneDrive\_root\Personal\dev\cppBuilder\13\CppBuilder01\Project3\File1.cpp=C:\OneDrive\_root\Personal\dev\cppBuilder\13\CppBuilder01\Project3\Hanoi.cpp</Transaction>
+    <Transaction>2023/11/22 18:42:04.000.443,=C:\OneDrive\_root\Personal\dev\cppBuilder\13\CppBuilder01\Project3\File1.cpp</Transaction>
+    <Transaction>2023/11/22 18:42:20.000.937,C:\OneDrive\_root\Personal\dev\cppBuilder\13\CppBuilder01\Project3\File1.cpp=C:\OneDrive\_root\Personal\dev\cppBuilder\13\CppBuilder01\Project3\UnitTesting.cpp</Transaction>
+    <Transaction>2023/11/22 18:42:51.000.253,=C:\OneDrive\_root\Personal\dev\cppBuilder\13\CppBuilder01\Project3\File1.cpp</Transaction>
+    <Transaction>2023/11/22 18:43:17.000.720,C:\OneDrive\_root\Personal\dev\cppBuilder\13\CppBuilder01\Project3\File1.cpp=C:\OneDrive\_root\Personal\dev\cppBuilder\13\CppBuilder01\Project3\UnitTesting.cpp</Transaction>
+    <Transaction>2023/11/26 07:36:57.000.744,=C:\OneDrive\_root\Personal\dev\cppBuilder\13\CppBuilder01\Project3\File1.cpp</Transaction>
+    <Transaction>2023/11/26 07:40:46.000.124,C:\OneDrive\_root\Personal\dev\cppBuilder\13\CppBuilder01\Project3\File1.cpp=C:\OneDrive\_root\Personal\dev\cppBuilder\13\CppBuilder01\Project3\Sudoku.cpp</Transaction>
+    <Transaction>2023/11/26 07:49:21.000.648,C:\OneDrive\_root\Personal\dev\cppBuilder\13\CppBuilder01\Project3\Main.cpp=C:\OneDrive\_root\Personal\dev\cppBuilder\13\CppBuilder01\Project3\TicTacToe.cpp</Transaction>
+    <Transaction>2023/11/27 12:20:28.000.684,=C:\OneDrive\_root\Personal\dev\cppBuilder\13\CppBuilder01\Project3\TFileManager.cpp</Transaction>
+    <Transaction>2023/11/27 12:20:47.000.312,=C:\OneDrive\_root\Personal\dev\cppBuilder\13\CppBuilder01\Project3\TFileManager.h</Transaction>
+    <Transaction>2023/11/27 12:34:22.000.331,=C:\OneDrive\_root\Personal\dev\cppBuilder\13\CppBuilder01\Project3\Sudoku.txt</Transaction>
+    <Transaction>2025/04/15 23:04:36.000.824,C:\Users\pablo.perez\dev\cpp\TensorFlow\cppBuilder\Project3\TFileManager.h=</Transaction>
+    <Transaction>2025/04/15 23:04:36.000.825,C:\Users\pablo.perez\dev\cpp\TensorFlow\cppBuilder\Project3\TicTacToe.cpp=</Transaction>
+    <Transaction>2025/04/15 23:04:36.000.818,C:\Users\pablo.perez\dev\cpp\TensorFlow\cppBuilder\Project3\Sudoku.cpp=</Transaction>
+    <Transaction>2025/04/15 23:04:36.000.809,C:\Users\pablo.perez\dev\cpp\TensorFlow\cppBuilder\Project3\Hanoi.cpp=</Transaction>
+    <Transaction>2025/04/15 23:04:36.000.822,C:\Users\pablo.perez\dev\cpp\TensorFlow\cppBuilder\Project3\Sudoku.txt=</Transaction>
+    <Transaction>2025/04/15 23:04:36.000.823,C:\Users\pablo.perez\dev\cpp\TensorFlow\cppBuilder\Project3\TFileManager.cpp=</Transaction>
+    <Transaction>2025/04/15 23:04:47.000.278,C:\Users\pablo.perez\dev\cpp\TensorFlow\cppBuilder\Project3\UnitTesting.h=</Transaction>
+    <Transaction>2025/04/15 23:52:21.000.463,C:\Users\pablo.perez\dev\cpp\TensorFlow\vstudiocode\src\__cppBuilder\Project3\Algorithm.ConsolePCH1.h=C:\Users\pablo.perez\dev\cpp\TensorFlow\vstudiocode\src\__cppBuilder\Project3\tesseractPCH1.h</Transaction>
+    <Transaction>2025/04/15 23:52:21.000.504,C:\Users\pablo.perez\dev\cpp\TensorFlow\vstudiocode\src\__cppBuilder\Project3\Algorithm.Console.cbproj=C:\Users\pablo.perez\dev\cpp\TensorFlow\vstudiocode\src\__cppBuilder\Project3\tesseract.cbproj</Transaction>
+    <Transaction>2025/04/16 00:06:41.000.438,C:\Users\pablo.perez\dev\cpp\TensorFlow\vstudiocode\src\__cppBuilder\tesseract\Project3\tesseract_exePCH1.h=C:\Users\pablo.perez\dev\cpp\TensorFlow\vstudiocode\src\__cppBuilder\tesseract\Project3\tesseractPCH1.h</Transaction>
+    <Transaction>2025/04/16 00:06:41.000.488,C:\Users\pablo.perez\dev\cpp\TensorFlow\vstudiocode\src\__cppBuilder\tesseract\Project3\tesseract_exe.cbproj=C:\Users\pablo.perez\dev\cpp\TensorFlow\vstudiocode\src\__cppBuilder\tesseract\Project3\tesseract.cbproj</Transaction>
+    <Transaction>2025/04/17 20:28:02.000.627,C:\Users\pablo.perez\dev\cpp\TensorFlow\vstudiocode\src\__cppBuilder\tesseract\tesseract_exe\UnitTesting.cpp=</Transaction>
+    <Transaction>2025/04/17 20:28:33.000.683,=C:\Users\pablo.perez\dev\cpp\TensorFlow\vstudiocode\src\__cppBuilder\tesseract\tesseract_exe\tesseract_exe.cpp</Transaction>
+  </Transactions>
+</BorlandProject>

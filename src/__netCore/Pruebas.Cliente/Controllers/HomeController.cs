@@ -50,25 +50,37 @@ namespace Pruebas.Cliente.Controllers
         //////////////////////////////////////////////////////////////
         [DllImport(@"" + dll_Tesseract_Wrapper + "", EntryPoint = @"" + fn_GetTesseractOcrOutputWrapper + "", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr _GetTesseractOcrOutputWrapper();
+        
+        [DllImport(@"" + dll_Tesseract_Wrapper + "", EntryPoint = "FreeMemory", CallingConvention = CallingConvention.Cdecl)]
+        public static extern void FreeMemory(IntPtr ptr);
 
         [Microsoft.AspNetCore.Mvc.HttpGet(fn_GetTesseractOcrOutputWrapper)]
         public string GetTesseractOcrOutputWrapper()
         {
-            //
             string return_value_str = string.Empty;
-            //
+            IntPtr intptr = IntPtr.Zero;
+
             try
             {
+                // Call the external DLL function to get the result
+                intptr = _GetTesseractOcrOutputWrapper();
 
-                IntPtr intptr = _GetTesseractOcrOutputWrapper();
+                // Convert the IntPtr to a string
                 string unicodeString = Marshal.PtrToStringUTF8(intptr);
 
+                // Assign the result to the return value
                 return_value_str = unicodeString;
+
+                // Free the memory allocated by the DLL
+                if (intptr != IntPtr.Zero)
+                {
+                    FreeMemory(intptr);
+                }
             }
             catch (Exception ex)
             {
+                // Handle exceptions
                 string msg = ex.Message + " " + ex.StackTrace;
-
                 return_value_str = msg;
             }
             return return_value_str;

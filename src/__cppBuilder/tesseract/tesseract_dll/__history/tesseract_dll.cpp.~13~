@@ -2,8 +2,6 @@
 #include <iostream>
 #include <conio.h>
 #include <string>
-#include <cstdlib>  // For free()
-
 #pragma hdrstop
 #pragma argsused
 
@@ -72,10 +70,10 @@ extern "C" __declspec(dllexport) const char* __cdecl GetTesseractOcrOutputWrappe
     return msg;       // Remember: caller must free() this!
 }
 
-
+#include <cstdlib>  // For free()
 
 // Declare the function with C linkage
-extern "C" __declspec(dllexport) void __cdecl FreeMemory(void* ptr)
+extern "C" void FreeMemory(void* ptr)
 {
     if (ptr != nullptr)  // Check if the pointer is valid
     {

@@ -6,7 +6,6 @@
 
 // Define function pointer types for the DLL functions
 typedef const char* (__cdecl *GetTesseractOcrOutputFuncWrapper)();
-typedef void        (__cdecl *FreeMemory(void* ptr))();
 
 int main() {
     // Load the DLL
@@ -47,8 +46,6 @@ int main() {
     // Test GetTesserGetTesseractOcrOutputactOcrOutput (uses hardcoded "Input.png")
     const char* result2 = getOcrOutput();
     std::cout << "GetTesseractOcrOutput result: " << result2 << std::endl;
-
-
 
     // Pause and wait for a keypress
     std::cout << "\nPress any key to exit..." << std::endl;
