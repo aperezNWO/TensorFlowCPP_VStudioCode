@@ -3,10 +3,10 @@
         <ProjectGuid>{D53E5B12-74D0-4337-821A-75D0783EFB0F}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="Project3\tesseract_exe.cbproj">
+        <Projects Include="tesseract_dll\tesseract_dll.cbproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="tesseract_dll\tesseract_dll.cbproj">
+        <Projects Include="tesseract_exe\tesseract_exe.cbproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -17,15 +17,6 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="tesseract_exe">
-        <MSBuild Projects="Project3\tesseract_exe.cbproj"/>
-    </Target>
-    <Target Name="tesseract_exe:Clean">
-        <MSBuild Projects="Project3\tesseract_exe.cbproj" Targets="Clean"/>
-    </Target>
-    <Target Name="tesseract_exe:Make">
-        <MSBuild Projects="Project3\tesseract_exe.cbproj" Targets="Make"/>
-    </Target>
     <Target Name="tesseract_dll">
         <MSBuild Projects="tesseract_dll\tesseract_dll.cbproj"/>
     </Target>
@@ -35,14 +26,23 @@
     <Target Name="tesseract_dll:Make">
         <MSBuild Projects="tesseract_dll\tesseract_dll.cbproj" Targets="Make"/>
     </Target>
+    <Target Name="tesseract_exe">
+        <MSBuild Projects="tesseract_exe\tesseract_exe.cbproj"/>
+    </Target>
+    <Target Name="tesseract_exe:Clean">
+        <MSBuild Projects="tesseract_exe\tesseract_exe.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="tesseract_exe:Make">
+        <MSBuild Projects="tesseract_exe\tesseract_exe.cbproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="tesseract_exe;tesseract_dll"/>
+        <CallTarget Targets="tesseract_dll;tesseract_exe"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="tesseract_exe:Clean;tesseract_dll:Clean"/>
+        <CallTarget Targets="tesseract_dll:Clean;tesseract_exe:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="tesseract_exe:Make;tesseract_dll:Make"/>
+        <CallTarget Targets="tesseract_dll:Make;tesseract_exe:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

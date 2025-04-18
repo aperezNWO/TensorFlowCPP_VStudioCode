@@ -11,7 +11,7 @@ vcpkg  integrate install
 vcpkg x64-mingw-static
 vcpkg integrate install
 
-g++ -shared -static -static-libgcc -static-libstdc++ -o TensorFlowApp64_CPP.dll ocr_dll_gen.cpp -I"C:/Users/pablo.perez/dev/cpp/_install/vcpkg/installed/x64-mingw-static/include"  -L"C:/Users/pablo.perez/dev/cpp/_install/vcpkg/installed/x64-mingw-static/lib"    -ltesseract55 -lleptonica -lcurl -larchive -ltiff -lwebp -lsharpyuv -lgif -lopenjp2 -lssl -lcrypto -lpng -ljpeg -lz -lbz2 -llzma -llz4 -lzstd -lws2_32 -lbcrypt -lcrypt32 -Wl,--subsystem,windows -m64 
+g++ -shared -static -static-libgcc -static-libstdc++ -o tesseract.dll ocr_dll_gen.cpp -I"C:/Users/pablo.perez/dev/cpp/_install/vcpkg/installed/x64-mingw-static/include"  -L"C:/Users/pablo.perez/dev/cpp/_install/vcpkg/installed/x64-mingw-static/lib"    -ltesseract55 -lleptonica -lcurl -larchive -ltiff -lwebp -lsharpyuv -lgif -lopenjp2 -lssl -lcrypto -lpng -ljpeg -lz -lbz2 -llzma -llz4 -lzstd -lws2_32 -lbcrypt -lcrypt32 -Wl,--subsystem,windows -m64 
 
 */
 
@@ -21,9 +21,9 @@ g++ -shared -static -static-libgcc -static-libstdc++ -o TensorFlowApp64_CPP.dll 
 #include <leptonica/allheaders.h>
 #include <string>
 #include <iostream>
+                                                     
 
-
-extern "C" __declspec(dllexport) const char* __cdecl GetTensorFlowOcrOutput() {
+extern "C" __declspec(dllexport) const char* __cdecl GetTesseractOcrOutput() {
 
     const char* imagePath = "Input.png";
     static std::string output;

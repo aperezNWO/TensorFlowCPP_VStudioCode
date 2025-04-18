@@ -6,9 +6,9 @@
 #pragma argsused
 
 // Define function pointer types for the DLL functions
-typedef const char* (__cdecl *GetTensorFlowOcrOutputFunc)();
+typedef const char* (__cdecl *GetTesseractOcrOutputFunc)();
 
-extern "C" __declspec(dllexport) const char* __cdecl GetTensorFlowOcrOutput() {
+extern "C" __declspec(dllexport) const char* __cdecl GetTesseractOcrOutput() {
     // Load the DLL
     HINSTANCE hDll = LoadLibraryA("tesseract.dll");
     if (!hDll) {
@@ -33,7 +33,7 @@ extern "C" __declspec(dllexport) const char* __cdecl GetTensorFlowOcrOutput() {
     }
 
     // Get the addresses of the exported functions
-    GetTensorFlowOcrOutputFunc getOcrOutput = (GetTensorFlowOcrOutputFunc)GetProcAddress(hDll, "GetTensorFlowOcrOutput");
+    GetTesseractOcrOutputFunc getOcrOutput = (GetTesseractOcrOutputFunc)GetProcAddress(hDll, "GetTesseractOcrOutput");
 
     // Check if the functions were found
     if (!getOcrOutput) {
@@ -42,7 +42,7 @@ extern "C" __declspec(dllexport) const char* __cdecl GetTensorFlowOcrOutput() {
         return "error";
     }
 
-    // Test GetTensorFlowOcrOutput (uses hardcoded "Input.png")
+    // Test GetTesseractOcrOutput (uses hardcoded "Input.png")
     const char* result2 = getOcrOutput();
 
     // your C++ logic here

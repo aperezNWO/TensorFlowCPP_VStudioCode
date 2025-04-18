@@ -8,15 +8,48 @@ namespace Pruebas.Cliente.Controllers
 {
     public class HomeController : Controller
     {
+        #region "DLL WRAPPER FUNCTIONS "
 
-      
-        [DllImport(@"TensorFlowApp64_C.dll"  , EntryPoint = @"GetTensorFlowVersion"  , CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        #region "TESSERACT"
+        const string dll_Tesseract                = "tesseract_dll.dll";
+        const string fn_GetTesseractOcrOutput     = "GetTesseractOcrOutput";
+
+        [DllImport(@"" + dll_Tesseract + "", EntryPoint = @"" + fn_GetTesseractOcrOutput + "", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr _GetTesseractOcrOutput();
+
+        [Microsoft.AspNetCore.Mvc.HttpGet(fn_GetTesseractOcrOutput)]
+        public string GetTesseractOcrOutput()
+        {
+            //
+            string return_value_str = string.Empty;
+            //
+            try
+            {
+
+                IntPtr intptr = _GetTesseractOcrOutput();
+                string unicodeString = Marshal.PtrToStringUTF8(intptr);
+
+                return_value_str = unicodeString;
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.Message + " " + ex.StackTrace;
+
+                return_value_str = msg;
+            }
+            return return_value_str;
+        }
+        #endregion
+
+        #region "TENSORFLOW"
+        const string dll_TensorFlow           = "TensorFlowApp64_C.dll";
+        const string fn_GetTensorFlowVersion  = "GetTensorFlowVersion";
+
+        [DllImport(@"" + dll_TensorFlow + ""  , EntryPoint  = @""  + fn_GetTensorFlowVersion  + "" , CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr _GetTensorFlowVersion();
 
-        [DllImport(@"TensorFlowApp64_CPP.dll", EntryPoint = @"GetTensorFlowOcrOutput", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr _GetTensorFlowOcrOutput();
 
-        [Microsoft.AspNetCore.Mvc.HttpGet("GetTensorFlowVersion")]
+        [Microsoft.AspNetCore.Mvc.HttpGet(fn_GetTensorFlowVersion)]
         public string GetTensorFlowVersion()
         {
             //
@@ -38,30 +71,11 @@ namespace Pruebas.Cliente.Controllers
             }
             return return_value_str;
         }
+        #endregion 
 
-        //
-        [Microsoft.AspNetCore.Mvc.HttpGet("GetTensorFlowOcrOutput")]
-        public string GetTensorFlowOcrOutput()
-        {
-            //
-            string return_value_str = string.Empty;
-            //
-            try
-            {
+        #endregion
 
-                IntPtr intptr        = _GetTensorFlowOcrOutput();
-                string unicodeString = Marshal.PtrToStringUTF8(intptr);
-
-                return_value_str = unicodeString;
-            }
-            catch (Exception ex)
-            {
-                string msg = ex.Message + " " + ex.StackTrace;
-
-                return_value_str = msg;
-            }
-            return return_value_str;
-        }
+        #region "ROOT FUNCTIONS "
 
         private readonly ILogger<HomeController> _logger;
 
@@ -86,8 +100,6 @@ namespace Pruebas.Cliente.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-      
-
-       
+        #endregion 
     }
 }

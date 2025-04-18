@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2025/04/16 00:06:02.000.410,=C:\OneDrive\_root\Personal\dev\cppBuilder\File1.cpp</Transaction>
+    <Transaction>2025/04/16 00:06:02.000.304,=C:\OneDrive\_root\Personal\dev\cppBuilder\Project1PCH1.h</Transaction>
+    <Transaction>2025/04/16 00:06:56.000.526,C:\OneDrive\_root\Personal\dev\cppBuilder\Project1PCH1.h=C:\OneDrive\_root\Personal\dev\cppBuilder\tesseract_dllPCH1.h</Transaction>
+    <Transaction>2025/04/16 00:06:56.000.529,C:\OneDrive\_root\Personal\dev\cppBuilder\Project1.cbproj=C:\OneDrive\_root\Personal\dev\cppBuilder\tesseract_dll.cbproj</Transaction>
+    <Transaction>2025/04/16 00:10:56.000.362,C:\OneDrive\_root\Personal\dev\cppBuilder\File1.cpp=C:\OneDrive\_root\Personal\dev\cppBuilder\tesseract_dll.cpp</Transaction>
+    <Transaction>2025/04/16 00:12:43.000.683,C:\OneDrive\_root\Personal\dev\cppBuilder\tesseract_dllPCH1.h=C:\Users\pablo.perez\dev\cpp\TensorFlow\vstudiocode\src\__cppBuilder\tesseract\tesseract_dllPCH2.h</Transaction>
+    <Transaction>2025/04/16 00:12:43.000.796,C:\OneDrive\_root\Personal\dev\cppBuilder\tesseract_dll.cpp=C:\Users\pablo.perez\dev\cpp\TensorFlow\vstudiocode\src\__cppBuilder\tesseract\tesseract_dll.cpp</Transaction>
+    <Transaction>2025/04/16 00:12:43.000.848,C:\OneDrive\_root\Personal\dev\cppBuilder\tesseract_dll.cbproj=C:\Users\pablo.perez\dev\cpp\TensorFlow\vstudiocode\src\__cppBuilder\tesseract\tesseract_dll.cbproj</Transaction>
+    <Transaction>2025/04/16 00:13:16.000.649,C:\Users\pablo.perez\dev\cpp\TensorFlow\vstudiocode\src\__cppBuilder\tesseract\tesseract_dll.cbproj=C:\Users\pablo.perez\dev\cpp\TensorFlow\vstudiocode\src\__cppBuilder\tesseract\tesseract_dll.cbproj</Transaction>
+    <Transaction>2025/04/16 00:13:56.000.452,C:\Users\pablo.perez\dev\cpp\TensorFlow\vstudiocode\src\__cppBuilder\tesseract\tesseract_dll.cbproj=C:\Users\pablo.perez\dev\cpp\TensorFlow\vstudiocode\src\__cppBuilder\tesseract\tesseract_dll.cbproj</Transaction>
+    <Transaction>2025/04/16 00:14:35.000.807,C:\Users\pablo.perez\dev\cpp\TensorFlow\vstudiocode\src\__cppBuilder\tesseract\tesseract_dll.cpp=C:\Users\pablo.perez\dev\cpp\TensorFlow\vstudiocode\src\__cppBuilder\tesseract\tesseract_dll\tesseract_dll.cpp</Transaction>
+    <Transaction>2025/04/16 00:14:42.000.250,C:\Users\pablo.perez\dev\cpp\TensorFlow\vstudiocode\src\__cppBuilder\tesseract\tesseract_dll.cbproj=C:\Users\pablo.perez\dev\cpp\TensorFlow\vstudiocode\src\__cppBuilder\tesseract\tesseract_dll\tesseract_dll.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>
