@@ -29,7 +29,7 @@ extern "C" __declspec(dllexport) const char* __cdecl GetTesseractOcrOutput() {
         std::cerr << "Error message: " << (LPSTR)errorMsg << std::endl;
         LocalFree(errorMsg);
 
-        return "error";
+        return "Failed to load tesseract.dll.";
     }
 
     // Get the addresses of the exported functions
@@ -39,7 +39,7 @@ extern "C" __declspec(dllexport) const char* __cdecl GetTesseractOcrOutput() {
     if (!getOcrOutput) {
         std::cerr << "Failed to get function addresses. Error code: " << GetLastError() << std::endl;
         FreeLibrary(hDll);
-        return "error";
+        return "Failed to get function addresses";
     }
 
     // Test GetTesseractOcrOutput (uses hardcoded "Input.png")

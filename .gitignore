@@ -4,7 +4,7 @@ src/__tensorflow/_tensorflow_c/tensorflow.dll
 src/__tensorflow/_tensorflow_c/tensorflow.lib
 src/__tesseract/_tesseract_cpp/include/
 src/__tesseract/_tesseract_cpp/lib/
-src/__tesseract/_tesseract_cpp/tensorflow.dll
+src/__tesseract/_tesseract_cpp/tesseract_dll.dll
 src/__tesseract/_tesseract_cpp/*.lib
 src/__netCore/Pruebas.Cliente/bin/
 src/__cppBuilder/tesseract/tesseract_test/tesseract.dll
