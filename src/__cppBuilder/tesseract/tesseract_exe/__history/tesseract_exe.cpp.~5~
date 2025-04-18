@@ -5,14 +5,14 @@
 #include <string>
 
 // Define function pointer types for the DLL functions
-typedef const char* (__cdecl *GetTesseractOcrOutputFuncWrapper)();
+typedef const char* (__cdecl *GetTesseractOcrOutputWrapperFunc)();
 
 int main() {
     // Load the DLL
     HINSTANCE hDll = LoadLibraryA("tesseract_dll.dll");
     if (!hDll) {
         DWORD errorCode = GetLastError(); // Capture the error immediately
-        std::cerr << "Failed to load tesseract_dll.dll. Error code: " << errorCode << std::endl;
+        std::cerr << "Failed to load TensorFlowApp64_CPP.dll. Error code: " << errorCode << std::endl;
 
         // Optional: Format the error message for more detail
         LPVOID errorMsg;
@@ -34,7 +34,7 @@ int main() {
 
     // Get the addresses of the exported functions
 
-    GetTesseractOcrOutputFuncWrapper getOcrOutput = (GetTesseractOcrOutputFuncWrapper)GetProcAddress(hDll, "GetTesseractOcrOutputWrapper");
+    GetTesseractOcrOutputWrapperFunc getOcrOutput = (GetTesseractOcrOutputFuncWrapper)GetProcAddress(hDll, "GetTesseractOcrOutputWrapper");
 
     // Check if the functions were found
     if (!getOcrOutput) {

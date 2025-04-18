@@ -11,9 +11,14 @@ namespace Pruebas.Cliente.Controllers
         #region "DLL WRAPPER FUNCTIONS "
 
         #region "TESSERACT"
-        const string dll_Tesseract                = "tesseract_dll.dll";
-        const string fn_GetTesseractOcrOutput     = "GetTesseractOcrOutput";
+        const string dll_Tesseract                    = "tesseract.dll";
+        const string dll_Tesseract_Wrapper            = "tesseract_dll.dll";
+        const string fn_GetTesseractOcrOutput         = "GetTesseractOcrOutput";
+        const string fn_GetTesseractOcrOutputWrapper  = "GetTesseractOcrOutputWrapper";
 
+        //////////////////////////////////////////////////////////////
+        /// _GetTesseractOcrOutput
+        //////////////////////////////////////////////////////////////
         [DllImport(@"" + dll_Tesseract + "", EntryPoint = @"" + fn_GetTesseractOcrOutput + "", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr _GetTesseractOcrOutput();
 
@@ -27,6 +32,35 @@ namespace Pruebas.Cliente.Controllers
             {
 
                 IntPtr intptr = _GetTesseractOcrOutput();
+                string unicodeString = Marshal.PtrToStringUTF8(intptr);
+
+                return_value_str = unicodeString;
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.Message + " " + ex.StackTrace;
+
+                return_value_str = msg;
+            }
+            return return_value_str;
+        }
+
+        //////////////////////////////////////////////////////////////
+        /// _GetTesseractOcrOutputWrapper
+        //////////////////////////////////////////////////////////////
+        [DllImport(@"" + dll_Tesseract_Wrapper + "", EntryPoint = @"" + fn_GetTesseractOcrOutputWrapper + "", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr _GetTesseractOcrOutputWrapper();
+
+        [Microsoft.AspNetCore.Mvc.HttpGet(fn_GetTesseractOcrOutputWrapper)]
+        public string GetTesseractOcrOutputWrapper()
+        {
+            //
+            string return_value_str = string.Empty;
+            //
+            try
+            {
+
+                IntPtr intptr = _GetTesseractOcrOutputWrapper();
                 string unicodeString = Marshal.PtrToStringUTF8(intptr);
 
                 return_value_str = unicodeString;

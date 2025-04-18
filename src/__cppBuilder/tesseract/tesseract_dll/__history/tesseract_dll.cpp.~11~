@@ -43,31 +43,13 @@ extern "C" __declspec(dllexport) const char* __cdecl GetTesseractOcrOutputWrappe
     }
 
     // Test GetTesseractOcrOutput (uses hardcoded "Input.png")
-    const char* ocrResult = getOcrOutput();
+    const char* result2 = getOcrOutput();
 
-    /////////////////////////////////////////////////////////////////////
     // your C++ logic here
-    /////////////////////////////////////////////////////////////////////
-
-
-    const char* prefix  = "C++ Builder Wrapper : ";
-
-    // Allocate enough memory for the combined string
-    size_t buffer_size = strlen(prefix) + strlen(ocrResult) + 1;
-    char* msg = (char*)malloc(buffer_size);
-
-    if (msg == NULL) {
-        return "Memory allocation failed!";
-    }
-
-    // Build the combined string
-    strcpy(msg, prefix);
-    strcat(msg, ocrResult);
 
     // Clean up
-    FreeLibrary(hDll);
-
-    return msg;       // Remember: caller must free() this!
+    //FreeLibrary(hDll);
+    return result2;
 }
 
 
