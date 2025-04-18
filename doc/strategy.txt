@@ -2,42 +2,8 @@
 // STRATEGY
 ///////////////////////////////////////////////
 
--- [_]  TESSERACT  
 
-        -- [x] installer
-
-            -- [x] VCPKG.
-        
-        -- [X]  g++         DLL standalone wrapper.
-
-                -- [x]  TensorFlowApp64_CPP.DLL
-
-                -- [x]  GetTensorFlowOcrOutput()
-
-                -- [x]  https://tensorflownetcore64.tryasp.net/GetTensorFlowOcrOutput
- 
-
-        -- [X]  C++ Builder DLL standalone wrapper.
-
-                -- [x]  tesseract.dll (anterior "TensorFlowApp64_CPP.DLL" g++ standalone)
-                  
-                -- [x]  TensorFlowApp64_CPP.DLL (c++ builder) y otros archivos *.a, *.o, etc (verificar si se necesitan)
-
-                -- [x]  GetTensorFlowOcrOutput()
-
-                -- [x]  https://tensorflownetcore64.tryasp.net/GetTensorFlowOcrOutput
-
-        -- [>]  Complete ocr tesseract sample Angular / C++.
-
-                -- [>]  Coregir convención de nombres.
-
-                        -- [_] Corregir instalación visual studio community.
-                       
-                        -- [_] Cambiar "TensorFlowApp64_CPP.DLL" a "TesseractApp64_CPP.DLL".
-
-
-        -- [_]  Ask for more Tesseract capabilies in C++.
-
+-- [>]  NAMING CONVENTION FIX.
 
 -- [_] TENSORFLOW 
 
@@ -76,9 +42,47 @@
 
             -- [_] https://tensorflownetcore64.tryasp.net/GetTensorFlowVersion
 
-    -- [_]  Ask for tensorflow capabilies in C++.
+-- [_]  TESSERACT  
+
+        -- [x] installer
+
+            -- [x] VCPKG.
+        
+        -- [X]  g++         DLL standalone wrapper.
+
+                -- [x]  TensorFlowApp64_CPP.DLL
+
+                -- [x]  GetTensorFlowOcrOutput()
+
+                -- [x]  https://tensorflownetcore64.tryasp.net/GetTensorFlowOcrOutput
+ 
+
+        -- [X]  C++ Builder DLL standalone wrapper.
+
+                -- [x]  tesseract.dll (g++ standalone)
+                  
+                -- [x]  tesseract_dll.DLL (c++ builder) y otros archivos *.a, *.o, etc (verificar si se necesitan)
+
+                -- [x]  GetTesseractOcrOutput()
+
+                -- [x]  tesseract_exe.exe TEST OK
+                
+                -- [x]  https://tensorflownetcore64.tryasp.net/GetTesseractcOutput
+
+                -- [>]  UNABLE TO PUBLISH C++ BUILDER DLL STANDALONE WRAPPER.
 
 
--- [_]  NAMING CONVENTION FIX.
+        -- [_]  Ask for more Tesseract capabilies in C++.
+
+        
+        -- [>]  Complete ocr tesseract sample Angular / C++.
+
+                -- [>]  Coregir convención de nombres.
+
+                        -- [_] Corregir instalación visual studio community.
+                       
+                        -- [_] Cambiar "TensorFlowApp64_CPP.DLL" a "TesseractApp64_CPP.DLL".
+
+
 
 ///////////////////////////////////////////////
