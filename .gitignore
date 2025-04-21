@@ -7,6 +7,3 @@ src/__tesseract/_tesseract_cpp/lib/
 src/__tesseract/_tesseract_cpp/tesseract.dll
 src/__tesseract/_tesseract_cpp/*.lib
 src/__netCore/Pruebas.Cliente/bin/
-src/__cppBuilder/tesseract/tesseract_test/tesseract.dll
-src/__cppBuilder/tesseract/tesseract_exe/Win64/Debug/tesseract.dll
-src/__cppBuilder/tesseract/tesseract_dll/Win64/Debug/tesseract.dll

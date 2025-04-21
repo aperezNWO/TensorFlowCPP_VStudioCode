@@ -12,12 +12,9 @@ namespace Pruebas.Cliente.Controllers
 
         #region "TESSERACT"
         const string dll_Tesseract                    = "tesseract.dll";
-        const string dll_Tesseract_Wrapper            = "tesseract_dll.dll";
         const string fn_GetTesseractOcrOutput         = "GetTesseractOcrOutput";
-        const string fn_GetTesseractOcrOutputWrapper  = "GetTesseractOcrOutputWrapper";
         const string fn_GetTesseractVersion           = "GetTesseractVersion";
-        const string fn_GetTesseractVersionWrapper    = "GetTesseractVersionWrapper";
-
+     
         //////////////////////////////////////////////////////////////
         /// COMMON FUNCTION
         //////////////////////////////////////////////////////////////
@@ -51,73 +48,7 @@ namespace Pruebas.Cliente.Controllers
             return return_value_str;
         }
 
-        //////////////////////////////////////////////////////////////
-        /// _GetTesseractOcrOutputWrapper
-        //////////////////////////////////////////////////////////////
-        [DllImport(@"" + dll_Tesseract_Wrapper + "", EntryPoint = @"" + fn_GetTesseractOcrOutputWrapper + "", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr _GetTesseractOcrOutputWrapper();
         
-        [Microsoft.AspNetCore.Mvc.HttpGet(fn_GetTesseractOcrOutputWrapper)]
-        public string GetTesseractOcrOutputWrapper()
-        {
-            string return_value_str = string.Empty;
-            IntPtr intptr = IntPtr.Zero;
-
-            try
-            {
-                // Call the external DLL function to get the result
-                intptr = _GetTesseractOcrOutputWrapper();
-
-                // Convert the IntPtr to a string
-                string unicodeString = Marshal.PtrToStringUTF8(intptr);
-
-                // Assign the result to the return value
-                return_value_str = unicodeString;
-
-            }
-            catch (Exception ex)
-            {
-                // Handle exceptions
-                string msg = ex.Message + " " + ex.StackTrace;
-                return_value_str = msg;
-            }
-            return return_value_str;
-        }
-
-        //////////////////////////////////////////////////////////////
-        /// GetTesseractVersionWrapper
-        //////////////////////////////////////////////////////////////
-        [DllImport(@"" + dll_Tesseract_Wrapper + "", EntryPoint = @"" + fn_GetTesseractVersionWrapper + "", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr _GetTesseractVersionWrapper();
-
-        [Microsoft.AspNetCore.Mvc.HttpGet(fn_GetTesseractVersionWrapper)]
-        public string GetTesseractVersionWrapper()
-        {
-            string return_value_str = string.Empty;
-            IntPtr intptr = IntPtr.Zero;
-
-            try
-            {
-                // Call the external DLL function to get the result
-                intptr = _GetTesseractVersionWrapper();
-
-                // Convert the IntPtr to a string
-                string unicodeString = Marshal.PtrToStringUTF8(intptr);
-
-                // Assign the result to the return value
-                return_value_str = unicodeString;
-
-
-            }
-            catch (Exception ex)
-            {
-                // Handle exceptions
-                string msg = ex.Message + " " + ex.StackTrace;
-                return_value_str = msg;
-            }
-            return return_value_str;
-        }
-
         //////////////////////////////////////////////////////////////
         /// GetTesseractVersion
         //////////////////////////////////////////////////////////////
