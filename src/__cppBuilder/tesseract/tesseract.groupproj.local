@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Default.Personality>
-		<Projects ActiveProject="C:\Users\pablo.perez\dev\cpp\TensorFlow\vstudiocode\src\__cppBuilder\tesseract\tesseract_dll\tesseract_dll.cbproj"/>
+		<Projects ActiveProject="C:\Users\pablo.perez\dev\cpp\TensorFlow\vstudiocode\src\__cppBuilder\tesseract\tesseract_exe\tesseract_exe.cbproj"/>
 	</Default.Personality>
 	<Transactions>
     <Transaction>2025/04/15 23:52:12.000.613,C:\Users\pablo.perez\dev\cpp\TensorFlow\vstudiocode\src\__cppBuilder\tesseract.groupproj=C:\Users\pablo.perez\dev\cpp\TensorFlow\vstudiocode\src\__cppBuilder\Algorithm.groupproj</Transaction>

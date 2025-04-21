@@ -21,6 +21,8 @@ g++ -shared -static -static-libgcc -static-libstdc++ -o tesseract.dll ocr_dll_ge
 #include <leptonica/allheaders.h>
 #include <string>
 #include <iostream>
+
+using namespace std;
                                                      
 extern "C" __declspec(dllexport) const char* __cdecl GetTesseractOcrOutput() {
 
@@ -51,5 +53,21 @@ extern "C" __declspec(dllexport) const char* __cdecl GetTesseractOcrOutput() {
     return output.c_str();
 }
 
+                                                     
+extern "C" __declspec(dllexport) const char* __cdecl GetTesseractVersion() {
+    // Get the Tesseract version
+    const char* tesseract_version = tesseract::TessBaseAPI::Version();
+    
+    static std::string result = tesseract_version;
 
+    return result.c_str();
+}
 
+//
+extern "C" __declspec(dllexport) const void __cdecl FreeMemory(void* ptr)
+{
+    if (ptr != nullptr)  // Check if the pointer is valid
+    {
+        free(ptr);  // Free the memory
+    }
+}

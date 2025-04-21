@@ -4,8 +4,11 @@
 #include <conio.h>
 #include <string>
 
+using namespace std;
+
 // Define function pointer types for the DLL functions
 typedef const char* (__cdecl *GetTesseractOcrOutputFuncWrapper)();
+typedef const char* (__cdecl *GetTesseractVersionFuncWrapper())();
 
 int main() {
     // Load the DLL
@@ -31,21 +34,44 @@ int main() {
         return 1;
     }
 
-
-    // Get the addresses of the exported functions
+    //////////////////////////////////////////////////////////////////////
+    // GetTesseractOcrOutputFuncWrapper
+    //////////////////////////////////////////////////////////////////////
 
     GetTesseractOcrOutputFuncWrapper getOcrOutput = (GetTesseractOcrOutputFuncWrapper)GetProcAddress(hDll, "GetTesseractOcrOutputWrapper");
 
     // Check if the functions were found
     if (!getOcrOutput) {
-        std::cerr << "Failed to get function addresses. Error code: " << GetLastError() << std::endl;
+        std::cerr << "Failed to get function addresses 'GetTesseractOcrOutputWrapper'. Error code: " << GetLastError() << std::endl;
         FreeLibrary(hDll);
         return 1;
     }
 
     // Test GetTesserGetTesseractOcrOutputactOcrOutput (uses hardcoded "Input.png")
-    const char* result2 = getOcrOutput();
-    std::cout << "GetTesseractOcrOutput result: " << result2 << std::endl;
+    const char* ocrOutput = getOcrOutput();
+    std::cout << "GetTesseractOcrOutput result: " << ocrOutput << std::endl;
+
+    //////////////////////////////////////////////////////////////////////
+    // GetTesseractVersionFuncWrapper
+    //////////////////////////////////////////////////////////////////////
+
+    GetTesseractVersionFuncWrapper getTesseractVersion = (GetTesseractVersionFuncWrapper)GetProcAddress(hDll, "GetTesseractVersionWrapper");
+
+    // Check if the functions were found
+    if (!getTesseractVersion) {
+        std::cerr << "Failed to get function addresses 'GetTesseractVersionWrapper'. Error code: " << GetLastError() << std::endl;
+        FreeLibrary(hDll);
+        return 1;
+    }
+
+    // GetTesseractVersionFuncWrapper
+    const char* tesseractVersion = getTesseractVersion();
+    std::cout << "GetTesseractVersionWrapper result: " << tesseractVersion << std::endl;
+
+    //////////////////////////////////////////////////////////////////////
+    // FINISHING TASK AND CLEANUP
+    //////////////////////////////////////////////////////////////////////
+
 
     // Pause and wait for a keypress
     std::cout << "\nPress any key to exit..." << std::endl;
@@ -53,6 +79,8 @@ int main() {
 
     // Clean up
     FreeLibrary(hDll);
+
+
     return 0;
 }
 

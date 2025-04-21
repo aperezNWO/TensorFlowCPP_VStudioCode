@@ -2,7 +2,7 @@
 
 TEST DLL
 
-g++ -std=c++11 -Wall -Wextra  ocr_dll_test.cpp -o TesseractApp.exe -m64
+g++ -std=c++11 -Wall -Wextra  ocr_dll_test.cpp -o ocr_dll_test.exe -m64
 
 
 */
@@ -13,12 +13,13 @@ g++ -std=c++11 -Wall -Wextra  ocr_dll_test.cpp -o TesseractApp.exe -m64
 #include <string>
 
 // Define function pointer types for the DLL functions
-typedef const char* (__cdecl *RunOcrOnImageFunc)(const char*);
-typedef const char* (__cdecl *GetTensorFlowOcrOutputFunc)();
+typedef        const char* (__cdecl *GetTesseractOcrOutputFunc)();
+typedef static const char* (__cdecl *GetTesseractVersionFunc)();
+
 
 int main() {
     // Load the DLL
-    HINSTANCE hDll = LoadLibraryA("TensorFlowApp64_CPP.dll");
+    HINSTANCE hDll = LoadLibraryA("tesseract.dll");
     if (!hDll) {
         DWORD errorCode = GetLastError(); // Capture the error immediately
         std::cerr << "Failed to load TensorFlowApp64_CPP.dll. Error code: " << errorCode << std::endl;
@@ -39,9 +40,12 @@ int main() {
 
         return 1;
     }
-
-    // Get the addresses of the exported functions
-    GetTensorFlowOcrOutputFunc getOcrOutput = (GetTensorFlowOcrOutputFunc)GetProcAddress(hDll, "GetTensorFlowOcrOutput");
+ 
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // GetTesseractOcrOutput
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    GetTesseractOcrOutputFunc getOcrOutput = (GetTesseractOcrOutputFunc)GetProcAddress(hDll, "GetTesseractOcrOutput");
 
     // Check if the functions were found
     if (!getOcrOutput) {
@@ -51,14 +55,35 @@ int main() {
     }
 
     // Test GetTensorFlowOcrOutput (uses hardcoded "Input.png")
-    const char* result2 = getOcrOutput();
-    std::cout << "GetTensorFlowOcrOutput result: " << result2 << std::endl;
+    const char* ocrOutput = getOcrOutput();
+    std::cout << "GetTesseractOcrOutputFunc result: " << ocrOutput << std::endl;
 
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // GetTesseractVersion
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    GetTesseractVersionFunc getTesseractVersion = (GetTesseractVersionFunc)GetProcAddress(hDll, "GetTesseractVersion");
+
+    // Check if the functions were found
+    if (!getTesseractVersion) {
+        std::cerr << "Failed to get function addresses. Error code: " << GetLastError() << std::endl;
+        FreeLibrary(hDll);
+        return 1;
+    }
+
+    // GetTesseractVersion
+    const char* tesseractVersion = getTesseractVersion();
+    std::cout << "GetTesseractVersion result: " << tesseractVersion << std::endl;
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // CLEANUP AND FINISING TASKS
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+ 
     // Pause and wait for a keypress
     std::cout << "\nPress any key to exit..." << std::endl;
     _getch();
 
-    // Clean up
+    
     FreeLibrary(hDll);
     return 0;
 }

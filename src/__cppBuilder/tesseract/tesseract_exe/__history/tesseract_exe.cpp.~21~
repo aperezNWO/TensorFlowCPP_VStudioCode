@@ -8,7 +8,7 @@ using namespace std;
 
 // Define function pointer types for the DLL functions
 typedef const char*  (__cdecl *GetTesseractOcrOutputFuncWrapper)();
-typedef const char* (__cdecl *GetTesseractVersionFuncWrapper)();
+typedef const char* (__cdecl *GetTesseractVersionFuncWraapper)();
 
 int main() {
     // Load the DLL
@@ -55,7 +55,7 @@ int main() {
     // GetTesseractVersion
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    GetTesseractVersionFuncWrapper getTesseractVersion = (GetTesseractVersionFuncWrapper)GetProcAddress(hDll, "GetTesseractVersionWrapper");
+    GetTesseractVersionFuncWraapper getTesseractVersion = (GetTesseractVersionFuncWraapper)GetProcAddress(hDll, "GetTesseractVersionWrapper");
 
     // Check if the functions were found
     if (!getTesseractVersion) {
@@ -66,7 +66,7 @@ int main() {
 
     // GetTesseractVersion
     const char* tesseractVersion = getTesseractVersion();
-    std::cout << "GetTesseractVersionFuncWrapper result: " << tesseractVersion << std::endl;
+    std::cout << "GetTesseractVersionFuncWraapper result: " << tesseractVersion << std::endl;
 
     //////////////////////////////////////////////////////////////////////
     // FINISHING TASK AND CLEANUP

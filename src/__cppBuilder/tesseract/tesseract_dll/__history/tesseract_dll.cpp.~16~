@@ -82,7 +82,7 @@ extern "C" __declspec(dllexport) const char* __cdecl GetTesseractOcrOutputWrappe
 
 
 // Declare the function with C linkage
-extern "C" __declspec(dllexport) const char* __cdecl GetTesseractVersionWrapper()
+extern "C" __declspec(dllexport) char* __cdecl GetTesseractVersionWrapper()
 {
     // Load the DLL
     HINSTANCE hDll = LoadLibraryA("tesseract.dll");
@@ -126,13 +126,13 @@ extern "C" __declspec(dllexport) const char* __cdecl GetTesseractVersionWrapper(
     /////////////////////////////////////////////////////////////////////
     // Finishing Task and Cleanup
     /////////////////////////////////////////////////////////////////////
-    //FreeLibrary(hDll);
+    FreeLibrary(hDll);
 
-    return tesseractVersion;       // static value don't delete
+    return tesseractVersion;       // Remember: caller must free() this!
 }
 
 //
-extern "C" __declspec(dllexport) const void __cdecl FreeMemory(void* ptr)
+extern "C" __declspec(dllexport) void __cdecl FreeMemory(void* ptr)
 {
     if (ptr != nullptr)  // Check if the pointer is valid
     {

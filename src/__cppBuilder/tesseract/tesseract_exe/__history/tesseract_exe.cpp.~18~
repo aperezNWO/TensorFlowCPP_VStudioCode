@@ -7,7 +7,7 @@
 using namespace std;
 
 // Define function pointer types for the DLL functions
-typedef const char*  (__cdecl *GetTesseractOcrOutputFuncWrapper)();
+typedef const char* (__cdecl *GetTesseractOcrOutputFuncWrapper)();
 typedef const char* (__cdecl *GetTesseractVersionFuncWrapper)();
 
 int main() {
@@ -42,31 +42,31 @@ int main() {
 
     // Check if the functions were found
     if (!getOcrOutput) {
-        std::cerr << "Failed to get function addresses 'GetTesseractOcrOutputFuncWrapper'. Error code: " << GetLastError() << std::endl;
+        std::cerr << "Failed to get function addresses 'GetTesseractOcrOutputWrapper'. Error code: " << GetLastError() << std::endl;
         FreeLibrary(hDll);
         return 1;
     }
 
     // Test GetTesserGetTesseractOcrOutputactOcrOutput (uses hardcoded "Input.png")
     const char* ocrOutput = getOcrOutput();
-    std::cout << "GetTesseractOcrOutputFuncWrapper result: " << ocrOutput << std::endl;
+    std::cout << "GetTesseractOcrOutput result: " << ocrOutput << std::endl;
 
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // GetTesseractVersion
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////
+    // GetTesseractVersionFuncWrapper
+    //////////////////////////////////////////////////////////////////////
 
     GetTesseractVersionFuncWrapper getTesseractVersion = (GetTesseractVersionFuncWrapper)GetProcAddress(hDll, "GetTesseractVersionWrapper");
 
     // Check if the functions were found
     if (!getTesseractVersion) {
-        std::cerr << "Failed to get function addresses 'GetTesseractVersionFuncWraapper'. Error code: " << GetLastError() << std::endl;
+        std::cerr << "Failed to get function addresses 'GetTesseractVersionWrapper'. Error code: " << GetLastError() << std::endl;
         FreeLibrary(hDll);
         return 1;
     }
 
-    // GetTesseractVersion
+    // GetTesseractVersionFuncWrapper
     const char* tesseractVersion = getTesseractVersion();
-    std::cout << "GetTesseractVersionFuncWrapper result: " << tesseractVersion << std::endl;
+    std::cout << "GetTesseractVersionWrapper result: " << tesseractVersion << std::endl;
 
     //////////////////////////////////////////////////////////////////////
     // FINISHING TASK AND CLEANUP
