@@ -37,8 +37,7 @@
 				"-o",
 				"${fileDirname}\\${fileBasenameNoExtension}.dll",
 				"-I${fileDirname}\\include", 
-				"-L", // Library directory
-				"C:/Users/pablo.perez/dev/cpp/_install/vcpkg/installed/x64-mingw-static/lib",
+				"-L${fileDirname}\\lib", // Library directory
 				"-ltesseract55", // Link against tesseract
 				"-lleptonica", // Link against leptonica
 				"-lcurl", // Link against curl
