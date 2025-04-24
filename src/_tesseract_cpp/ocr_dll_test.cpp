@@ -1,10 +1,14 @@
+
+//////////////////////////////////////////
+// CONFIGURATION
+//////////////////////////////////////////
 /*
 
-TOOL CHAIN : C:\msys64\ucrt64\bin
 
-
-g++ -std=c++11 -Wall -Wextra  ocr_dll_test.cpp -o ocr_dll_test.exe -m64
-
+1) TOOL CHAIN : C:\msys64\ucrt64\bin
+2) g++ -std=c++11 -Wall -Wextra  ocr_dll_test.cpp -o ocr_dll_test.exe -m64
+3) TERMINAL > RUN > BUILD TASK > (1) C/C++: g++.exe compilar archivo activo
+4) Copy *.exe file to __dist folder.
 
 */
 
@@ -15,12 +19,12 @@ g++ -std=c++11 -Wall -Wextra  ocr_dll_test.cpp -o ocr_dll_test.exe -m64
 
 // Define function pointer types for the DLL functions
 typedef        const char* (__cdecl *GetTesseractOcrOutputFunc)();
-typedef static const char* (__cdecl *GetTesseractVersionFunc)();
+typedef        const char* (__cdecl *GetTesseractVersionFunc)();
 
 
 int main() {
     // Load the DLL
-    HINSTANCE hDll = LoadLibraryA("tesseract.dll");
+    HINSTANCE hDll = LoadLibraryA("ocr_dll_gen.dll");
     if (!hDll) {
         DWORD errorCode = GetLastError(); // Capture the error immediately
         std::cerr << "Failed to load TensorFlowApp64_CPP.dll. Error code: " << errorCode << std::endl;

@@ -1,0 +1,79 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "(1) C/C++: g++.exe compilar archivo activo",
+			"command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+			"args": [
+				"-g",
+				"${file}",
+				"-o",
+				"${fileDirname}\\${fileBasenameNoExtension}.exe"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compilador: C:\\msys64\\ucrt64\\bin\\g++.exe"
+		},
+		{
+			"type": "cppbuild",
+			"label": "(2) Build Tesseract DLL",
+			"command": "g++", // Path to g++ (ensure it's in your PATH or specify the full path)
+			"args": [
+				"-shared", // Create a shared library (DLL)
+				"-static", // Statically link libraries
+				"-static-libgcc", // Statically link GCC runtime
+				"-static-libstdc++", // Statically link C++ standard library
+				"-g",
+				"${file}",
+				"-o",
+				"${fileDirname}\\${fileBasenameNoExtension}.dll",
+				"-I", // Include directory
+				"C:/Users/pablo.perez/dev/cpp/_install/vcpkg/installed/x64-mingw-static/include",
+				"-L", // Library directory
+				"C:/Users/pablo.perez/dev/cpp/_install/vcpkg/installed/x64-mingw-static/lib",
+				"-ltesseract55", // Link against tesseract
+				"-lleptonica", // Link against leptonica
+				"-lcurl", // Link against curl
+				"-larchive", // Link against archive
+				"-ltiff", // Link against tiff
+				"-lwebp", // Link against webp
+				"-lsharpyuv", // Link against sharpyuv
+				"-lgif", // Link against gif
+				"-lopenjp2", // Link against openjp2
+				"-lssl", // Link against SSL
+				"-lcrypto", // Link against crypto
+				"-lpng", // Link against PNG
+				"-ljpeg", // Link against JPEG
+				"-lz", // Link against zlib
+				"-lbz2", // Link against bzip2
+				"-llzma", // Link against LZMA
+				"-llz4", // Link against LZ4
+				"-lzstd", // Link against Zstandard
+				"-lws2_32", // Link against Windows Sockets
+				"-lbcrypt", // Link against BCrypt
+				"-lcrypt32", // Link against Cryptography API
+				"-Wl,--subsystem,windows", // Specify subsystem as Windows GUI
+				"-m64" // Target 64-bit architecture
+			],
+			"options": {
+				"cwd": "${workspaceFolder}" // Current working directory
+			},
+			"problemMatcher": ["$gcc"], // Match GCC-style error messages
+			"group": {
+				"kind": "build", // Mark as a build task
+				"isDefault": true // Set as the default build task
+			},
+			"detail": "Generated task for building Tesseract DLL"
+
+		}
+	]
+}
