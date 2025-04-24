@@ -1,7 +1,6 @@
 ///////////////////////////////////////////////
-// STRATEGY
+//  TODO SCM
 ///////////////////////////////////////////////
-
 
 -- [>]  NAMING CONVENTION FIX.
 
@@ -83,6 +82,12 @@
                        
                         -- [_] Cambiar "TensorFlowApp64_CPP.DLL" a "TesseractApp64_CPP.DLL".
 
+///////////////////////////////////////////////
+-- [TODO LIST GENERAL]
+///////////////////////////////////////////////
 
+-- [_] Create function "GetTesseractAppVersion()" [ complement of "GetTessseractVersion() ]"
+
+-- [_] C++ CLASES. 
 
 ///////////////////////////////////////////////

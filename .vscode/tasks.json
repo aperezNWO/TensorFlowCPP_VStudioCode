@@ -36,8 +36,7 @@
 				"${file}",
 				"-o",
 				"${fileDirname}\\${fileBasenameNoExtension}.dll",
-				"-I", // Include directory
-				"C:/Users/pablo.perez/dev/cpp/_install/vcpkg/installed/x64-mingw-static/include",
+				"-I${fileDirname}\\include", 
 				"-L", // Library directory
 				"C:/Users/pablo.perez/dev/cpp/_install/vcpkg/installed/x64-mingw-static/lib",
 				"-ltesseract55", // Link against tesseract

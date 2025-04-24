@@ -4,11 +4,11 @@
 //////////////////////////////////////////
 /*
 
-
 1) TOOL CHAIN : C:\msys64\ucrt64\bin
 2) g++ -std=c++11 -Wall -Wextra  ocr_dll_test.cpp -o ocr_dll_test.exe -m64
 3) TERMINAL > RUN > BUILD TASK > (1) C/C++: g++.exe compilar archivo activo
 4) Copy *.exe file to __dist folder.
+5) execute ".\ocr_dll_test.exe"
 
 */
 
@@ -20,11 +20,13 @@
 // Define function pointer types for the DLL functions
 typedef        const char* (__cdecl *GetTesseractOcrOutputFunc)();
 typedef        const char* (__cdecl *GetTesseractVersionFunc)();
+typedef        const char* (__cdecl *GetTesseractAppVersionFunc)();
 
 
+//
 int main() {
     // Load the DLL
-    HINSTANCE hDll = LoadLibraryA("ocr_dll_gen.dll");
+    HINSTANCE hDll = LoadLibraryA("tesseract.dll");
     if (!hDll) {
         DWORD errorCode = GetLastError(); // Capture the error immediately
         std::cerr << "Failed to load TensorFlowApp64_CPP.dll. Error code: " << errorCode << std::endl;
@@ -79,6 +81,23 @@ int main() {
     // GetTesseractVersion
     const char* tesseractVersion = getTesseractVersion();
     std::cout << "GetTesseractVersion result: " << tesseractVersion << std::endl;
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // GetTesseractAppVersion
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    GetTesseractAppVersionFunc getAppVersion = (GetTesseractAppVersionFunc)GetProcAddress(hDll, "GetTesseractAppVersion");
+
+    // Check if the functions were found
+    if (!getAppVersion) {
+        std::cerr << "Failed to get function addresses 'GetTesseractAppVersion'. Error code: " << GetLastError() << std::endl;
+        FreeLibrary(hDll);
+        return 1;
+    }
+
+    // Test GetTensorFlowOcrOutput (uses hardcoded "Input.png")
+    const char* appVersion = getAppVersion();
+    std::cout << "'GetTesseractAppVersion' result: " << appVersion << std::endl;
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
     // CLEANUP AND FINISING TASKS

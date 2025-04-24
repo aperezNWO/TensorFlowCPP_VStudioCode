@@ -14,3 +14,22 @@ include/
 lib/
 tensorflow.dll
 tensorflow.lib
+
+
+///////////////////////////////////////////////
+-- [COMMIT PROCEDURE]
+///////////////////////////////////////////////
+
+-- [_] Version from tessearct.ini "DLL_VERSION" section value
+
+git add *
+
+git commit -m"Application CPP_GCC_TESSERACT v[1.0.0]
+>> 1) TesseractApp implemenmtation.
+>> 2) Dll versioning file tesseract.ini."
+
+git push
+
+git pull
+
+//////////////////////////////////////////////
