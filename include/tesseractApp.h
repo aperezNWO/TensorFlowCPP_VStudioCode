@@ -38,6 +38,7 @@ class TesseractApp
         ~TesseractApp();
         //
         const char*  GetTesseractOcrOutput(); 
+        const char*  GetTesseractOcrOutputPath(const char* imagePath);
         const char*  GetTesseractVersion();
         const char*  GetTesseractAppVersion(); 
         //

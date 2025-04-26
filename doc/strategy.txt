@@ -90,4 +90,7 @@
 
 -- [_] C++ CLASES. 
 
+        -- [_] Inheritance -> env / read write file for diagnostics. 
+
+
 ///////////////////////////////////////////////

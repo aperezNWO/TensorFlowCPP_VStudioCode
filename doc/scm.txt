@@ -24,10 +24,8 @@ tensorflow.lib
 
 git add *
 
-git commit -m"Application CPP_GCC_TESSERACT v[1.0.1]
->> 1) TesseractApp implemenmtation.
->> 2) Dll versioning file tesseract.ini.
->> 3) Working folder update."
+git commit -m"Application CPP_GCC_TESSERACT v[1.0.2]
+>>1) funcion 'GetTesseractOcrOutputPath'"
 
 git push
 

@@ -69,6 +69,40 @@ const char* TesseractApp::GetTesseractOcrOutput()
    return output.c_str();
 }
 //
+const char* TesseractApp::GetTesseractOcrOutputPath(const char* imagePath)
+{
+   //
+   static std::string output;
+   //
+   tesseract::TessBaseAPI ocr;
+
+   //
+   if (ocr.Init("tessdata", "eng")) {
+       output = "Could not initialize tesseract.";
+       return output.c_str();
+   }
+
+   //
+   Pix* image = pixRead(imagePath);
+   if (!image) {
+       output = "Could not open image.";
+       return output.c_str();
+   }
+
+   //
+   ocr.SetImage(image);
+   char* result = ocr.GetUTF8Text();
+
+   //
+   output = result ? result : "No output.";
+   delete[] result;
+   pixDestroy(&image);
+   ocr.End();
+
+   //
+   return output.c_str();
+}
+//
 const char*  TesseractApp::GetTesseractVersion()
 {
     // Get the Tesseract version
@@ -134,6 +168,13 @@ DLL_EXPORT const char*  GetTesseractOcrOutput()
     return uniquePtr->GetTesseractOcrOutput();
 }
 
+DLL_EXPORT const char*  GetTesseractOcrOutputPath(char* imagePath) 
+{
+    //
+    std::unique_ptr<TesseractApp> uniquePtr = std::make_unique<TesseractApp>();
+    //
+    return uniquePtr->GetTesseractOcrOutputPath(imagePath);
+}
                                                      
 DLL_EXPORT const char* GetTesseractVersion() 
 {
