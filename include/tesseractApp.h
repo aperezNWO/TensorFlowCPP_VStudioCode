@@ -19,9 +19,6 @@
 #include <cctype>
 #include <map>
 
-//
-using namespace std;
-
 #pragma hdrstop
 #pragma argsused
 #pragma once
