@@ -86,7 +86,7 @@
 -- [TODO LIST GENERAL]
 ///////////////////////////////////////////////
 
--- [_] Create function "GetTesseractAppVersion()" [ complement of "GetTessseractVersion() ]"
+-- [X] Create function "GetTesseractAppVersion()" [ complement of "GetTessseractVersion() ]"
 
 -- [_] C++ CLASES. 
 

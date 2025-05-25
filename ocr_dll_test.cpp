@@ -4,7 +4,7 @@
 //////////////////////////////////////////
 /*
 
-1) TOOL CHAIN : C:\msys64\ucrt64\bin
+1) TOOL CHAIN : C:\msys64\mingw64\bin
 2) g++ -std=c++11 -Wall -Wextra  ocr_dll_test.cpp -o ocr_dll_test.exe -m64
 3) TERMINAL > RUN > BUILD TASK > (1) C/C++: g++.exe compilar archivo activo
 4) Copy *.exe file to __dist folder.

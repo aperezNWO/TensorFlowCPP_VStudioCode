@@ -4,13 +4,26 @@
 //////////////////////////////////////////////////////
 /*
 
-1) TOOL CHAIN : C:\msys64\ucrt64\bin
-2) vcpkg x64-mingw-static
-3) vcpkg integrate install
-4) g++ -shared -static -static-libgcc -static-libstdc++ -o tesseract.dll tesseract_app.cpp -I"C:/Users/pablo.perez/dev/cpp/_install/vcpkg/installed/x64-mingw-static/include"  -L"C:/Users/pablo.perez/dev/cpp/_install/vcpkg/installed/x64-mingw-static/lib"    -ltesseract55 -lleptonica -lcurl -larchive -ltiff -lwebp -lsharpyuv -lgif -lopenjp2 -lssl -lcrypto -lpng -ljpeg -lz -lbz2 -llzma -llz4 -lzstd -lws2_32 -lbcrypt -lcrypt32 -Wl,--subsystem,windows -m64 
-5) TERMINAL > RUN > BUILD TASK > (2) Build Tesseract DLL
-5) rename file to "tesseract.dll".
-6) Copy "tesseract.dll" file to __dist folder.
+1) TOOL CHAIN : C:\msys64\ucrt64\bin (CAMBIAR PATH=)
+
+// INSTALL
+
+	2) vcpkg x64-mingw-static
+
+	3) vcpkg integrate install
+
+
+// COMMAND LINE COMPILE (static)
+
+	4) g++ -shared -static -static-libgcc -static-libstdc++ -o tesseract.dll tesseractApp.cpp -I"C:/Users/pablo.perez/dev/cpp/_install/vcpkg_ucrt64/installed/x64-mingw-static/include"  -L"C:/Users/pablo.perez/dev/cpp/_install/vcpkg_ucrt64/installed/x64-mingw-static/lib"    -ltesseract55 -lleptonica -lcurl -larchive -ltiff -lwebp -lsharpyuv -lgif -lopenjp2 -lssl -lcrypto -lpng -ljpeg -lz -lbz2 -llzma -llz4 -lzstd -lws2_32 -lbcrypt -lcrypt32 -Wl,--subsystem,windows -m64 
+
+// VISUAL STUDIO CODE INSTALL
+
+	5) TERMINAL > RUN > BUILD TASK > (2) Build Tesseract DLL
+
+	6) rename file to "tesseract.dll".
+
+	7) Copy "tesseract.dll" file to __dist folder.
 
 */
 
