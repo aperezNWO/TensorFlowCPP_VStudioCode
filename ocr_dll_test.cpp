@@ -21,7 +21,7 @@
 typedef        const char* (__cdecl *GetTesseractOcrOutputFunc)();
 typedef        const char* (__cdecl *GetTesseractVersionFunc)();
 typedef        const char* (__cdecl *GetTesseractAppVersionFunc)();
-
+typedef        const char* (__cdecl *GetTesseract_CPPSTDVersionFunc)();
 
 //
 int main() {
@@ -63,7 +63,7 @@ int main() {
 
     // Test GetTensorFlowOcrOutput (uses hardcoded "Input.png")
     const char* ocrOutput = getOcrOutput();
-    std::cout << "GetTesseractOcrOutputFunc result: " << ocrOutput << std::endl;
+    std::cout << std::endl << "'GetTesseractOcrOutput' result: " << ocrOutput /* << std::endl*/;
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
     // GetTesseractVersion
@@ -80,7 +80,7 @@ int main() {
 
     // GetTesseractVersion
     const char* tesseractVersion = getTesseractVersion();
-    std::cout << "GetTesseractVersion result: " << tesseractVersion << std::endl;
+    std::cout << std::endl<< "'GetTesseractAPIVersion'  result: " << tesseractVersion << std::endl;
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
     // GetTesseractAppVersion
@@ -97,7 +97,24 @@ int main() {
 
     // Test GetTensorFlowOcrOutput (uses hardcoded "Input.png")
     const char* appVersion = getAppVersion();
-    std::cout << "'GetTesseractAppVersion' result: " << appVersion << std::endl;
+    std::cout << std::endl << "'GetTesseractAppVersion' result: " << appVersion << std::endl;
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // GetTesseract_CPPSTDVersion
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    GetTesseract_CPPSTDVersionFunc getCPPSTDVersion = (GetTesseract_CPPSTDVersionFunc)GetProcAddress(hDll, "GetTesseract_CPPSTDVersion");
+
+    // Check if the functions were found
+    if (!getCPPSTDVersion) {
+        std::cerr << "Failed to get function addresses 'GetTesseract_CPPSTDVersion'. Error code: " << GetLastError() << std::endl;
+        FreeLibrary(hDll);
+        return 1;
+    }
+
+    // Get STD c++ VERSION
+    const char* cppSTDVersion = getCPPSTDVersion();
+    std::cout << std::endl << "'GetTesseract_CPPSTDVersion' result: " << cppSTDVersion << std::endl;
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
     // CLEANUP AND FINISING TASKS

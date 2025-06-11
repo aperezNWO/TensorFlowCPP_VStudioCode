@@ -82,10 +82,10 @@ Most compilers implement their own version of this keyword ...
 #define OPJ_DEPRECATED_STRUCT_MEMBER(memb, msg) memb
 #endif
 
-#if 0 || !defined(_WIN32)
+#if 1 || !defined(_WIN32)
 /* http://gcc.gnu.org/wiki/Visibility */
 #   if !defined(_WIN32) && __GNUC__ >= 4
-#       if 0 /* static library uses "hidden" */
+#       if 1 /* static library uses "hidden" */
 #           define OPJ_API    __attribute__ ((visibility ("hidden")))
 #       else
 #           define OPJ_API    __attribute__ ((visibility ("default")))

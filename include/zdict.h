@@ -41,7 +41,7 @@ extern "C" {
 
 #if defined(ZSTD_DLL_EXPORT) && (ZSTD_DLL_EXPORT==1)
 #  define ZDICTLIB_API __declspec(dllexport) ZDICTLIB_VISIBLE
-#elif 1
+#elif defined(ZSTD_DLL_IMPORT) && (ZSTD_DLL_IMPORT==1)
 #  define ZDICTLIB_API __declspec(dllimport) ZDICTLIB_VISIBLE /* It isn't required but allows to generate better code, saving a function pointer load from the IAT and an indirect jump.*/
 #else
 #  define ZDICTLIB_API ZDICTLIB_VISIBLE
@@ -288,7 +288,7 @@ extern "C" {
 #ifndef ZDICTLIB_STATIC_API
 #  if defined(ZSTD_DLL_EXPORT) && (ZSTD_DLL_EXPORT==1)
 #    define ZDICTLIB_STATIC_API __declspec(dllexport) ZDICTLIB_VISIBLE
-#  elif 1
+#  elif defined(ZSTD_DLL_IMPORT) && (ZSTD_DLL_IMPORT==1)
 #    define ZDICTLIB_STATIC_API __declspec(dllimport) ZDICTLIB_VISIBLE
 #  else
 #    define ZDICTLIB_STATIC_API ZDICTLIB_VISIBLE

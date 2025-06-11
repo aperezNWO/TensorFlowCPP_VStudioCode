@@ -6,7 +6,6 @@
 #define TESSERACTAPP_H
 #endif
 
-#include <map>
 #include <algorithm>
 #include <string>
 #include <vector>
@@ -19,17 +18,22 @@
 #include <cctype>
 #include <map>
 
+#include <tesseract/baseapi.h>
+#include <leptonica/allheaders.h>
+#include "Algorithm.h"
+
+#define DLL_EXPORT extern "C" __declspec(dllexport) __stdcall
+
+using namespace std;
+
 #pragma hdrstop
 #pragma argsused
 #pragma once
 
-#define DLL_EXPORT extern "C" __declspec(dllexport) __stdcall __cdecl
-
-using namespace std;
-
-class TesseractApp
+class TesseractApp :
+   public Algorithm
 {
-    public :
+   public :
         //
         TesseractApp();
         ~TesseractApp();
@@ -39,9 +43,9 @@ class TesseractApp
         const char*  GetTesseractVersion();
         const char*  GetTesseractAppVersion(); 
         //
-        int          ReadConfigFile();
+        //int          ReadConfigFile();
      public :
         //
-        map<string, string> configMap;
+        //map<string, string> configMap;
 
 };

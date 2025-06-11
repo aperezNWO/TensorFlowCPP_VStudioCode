@@ -37,7 +37,7 @@ extern "C" {
 
 #if defined(ZSTD_DLL_EXPORT) && (ZSTD_DLL_EXPORT==1)
 #  define ZSTDERRORLIB_API __declspec(dllexport) ZSTDERRORLIB_VISIBLE
-#elif 1
+#elif defined(ZSTD_DLL_IMPORT) && (ZSTD_DLL_IMPORT==1)
 #  define ZSTDERRORLIB_API __declspec(dllimport) ZSTDERRORLIB_VISIBLE /* It isn't required but allows to generate better code, saving a function pointer load from the IAT and an indirect jump.*/
 #else
 #  define ZSTDERRORLIB_API ZSTDERRORLIB_VISIBLE

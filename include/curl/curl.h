@@ -119,7 +119,7 @@ typedef void CURLSH;
 #define CURL_HAS_DECLSPEC_ATTRIBUTE(x) 0
 #endif
 
-#ifdef CURL_STATICLIB
+#if 1
 #  define CURL_EXTERN
 #elif defined(_WIN32) || \
      (CURL_HAS_DECLSPEC_ATTRIBUTE(dllexport) && \

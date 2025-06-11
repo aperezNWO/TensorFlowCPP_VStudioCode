@@ -78,7 +78,7 @@ extern "C" {
 #endif
 #if defined(LZ4_DLL_EXPORT) && (LZ4_DLL_EXPORT==1)
 #  define LZ4FLIB_API __declspec(dllexport) LZ4FLIB_VISIBILITY
-#elif 1 && defined(_MSC_VER)
+#elif 0
 #  define LZ4FLIB_API __declspec(dllimport) LZ4FLIB_VISIBILITY
 #else
 #  define LZ4FLIB_API LZ4FLIB_VISIBILITY
